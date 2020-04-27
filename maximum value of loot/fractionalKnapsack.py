@@ -17,6 +17,10 @@ def get_optimal_value(capacity, weights, values):
             ratio=capacity/weights[posmax1]
             weights[posmax1]=ratio*weights[posmax1]
             values[posmax1]=ratio*values[posmax1]
+           
+        if(weights[posmax1]<capacity and len(weights)<=1):
+            value+=values[posmax1]
+            return value
     
         value+=values[posmax1]        
         capacity-=weights[posmax1]
